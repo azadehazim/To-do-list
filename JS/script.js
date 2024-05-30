@@ -22,6 +22,8 @@ function checkHandler(event){
     let selectedLi=document.getElementById("li"+selectedCheckID);
 
     if(event.target.className==="fas fa-check"){
+
+        console.log("hi");
         
         selectedLi.classList.add("checked");
         
