@@ -1,10 +1,18 @@
 
 
-
+li{
+    opacity: 1;
+    transition: 1s;
+}
 
 
 .checked{
     background-color: green;
     text-decoration: line-through;
     transition: 1s;
+}
+
+.trashed{
+    opacity: 0;
+    
 }
