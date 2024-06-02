@@ -1,5 +1,6 @@
 
 let allTasksArray=[];
+let completedTasksArray=[];
 
 
 let count=0;
@@ -34,6 +35,9 @@ function checkHandler(event){
         selectedLi.classList.remove("inputTasks");
         selectedLi.classList.add("checked");
         //console.log(selectedLi);
+
+        completedTasksArray.push(selectedLi);
+        //console.log(completedTasksArray);
         
     }
 
@@ -61,8 +65,21 @@ function checkHandler(event){
 //document.getElementById("allTasks").addEventListener("click",showAllTasks(allTasksArray));
 
 function showAllTasks(){
+    document.querySelector(".allTasksUl").innerHTML="";
     //document.querySelector(".inputUl").style.display="none";
     allTasksArray.forEach(item => document.querySelector(".allTasksUl").innerHTML+=item);
     document.getElementById("sectionHeader").innerText="All Tasks";
     //console.log("show");
+}
+
+function showCompletedTasks(){
+    document.querySelector(".allTasksUl").innerHTML="";
+    document.getElementById("sectionHeader").innerText="Completed Tasks";
+
+    completedTasksArray.forEach(item => {
+        let completedLi=document.createElement("li");
+        completedLi.innerText=item.innerText;
+        completedLi.classList.add("completedTasksLi")
+        document.querySelector(".allTasksUl").appendChild(completedLi);
+    });
 }

@@ -127,3 +127,15 @@ ul{
     font-size: 22px;
     color: white;
 }
+
+.completedTasksLi{
+    background: radial-gradient(circle at 74.2% 50.9%, rgb(14, 72, 222) 5.2%, rgb(3, 22, 65) 75.3%);
+    border-radius: 20px;
+    position: relative;
+    color: white;
+    height: 50px;
+    padding: 10px;
+    opacity: 1;
+    transition: 1s;
+    margin: 10px 0;
+}
