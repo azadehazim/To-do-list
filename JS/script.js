@@ -1,4 +1,5 @@
 
+let allTasksArray=[];
 
 
 let count=0;
@@ -6,9 +7,14 @@ let count=0;
 document.querySelector('#input').addEventListener('change',function(){
     count++;
     let input = this.value;
-    let li=`<li id=li${count}>` + input + `<i class="fas fa-check" data-id=${count}></i> <i class="fas fa-trash" data-id=${count}></i> </li>`;
+    let li=`<li id=li${count} class="inputTasks">` + input + `<i class="fas fa-check" data-id=${count}></i> <i class="fas fa-trash" data-id=${count}></i> </li>`;
     this.value="";
-    document.querySelector("ul").innerHTML+=li;
+    document.querySelector(".inputUl").innerHTML+=li;
+    
+    let liOnly=`<li id=liOnly${count} class="inputTasks">` + input + `</li>`;
+    //console.log(li);
+    allTasksArray.push(liOnly);
+    //console.log(allTasksArray);
     
 });
 
@@ -23,19 +29,40 @@ function checkHandler(event){
 
     if(event.target.className==="fas fa-check"){
 
-        console.log("hi");
-        
+        //console.log("hi");
+
+        selectedLi.classList.remove("inputTasks");
         selectedLi.classList.add("checked");
+        //console.log(selectedLi);
         
     }
 
 
     else if(event.target.className==="fas fa-trash"){
-        console.log("bye");
+        //console.log("bye");
+
+        selectedLi.classList.remove("inputTasks");
 
         selectedLi.classList.add("trashed");
-        selectedLi.addEventListener('transitionend', () => selectedLi.remove());
+        
+
+        selectedLi.addEventListener('transitionend', () =>{
+            selectedLi.remove();
+            selectedLi.classList.remove("trashed");
+        });
 
     }
 
+}
+
+
+
+
+//document.getElementById("allTasks").addEventListener("click",showAllTasks(allTasksArray));
+
+function showAllTasks(){
+    //document.querySelector(".inputUl").style.display="none";
+    allTasksArray.forEach(item => document.querySelector(".allTasksUl").innerHTML+=item);
+    document.getElementById("sectionHeader").innerText="All Tasks";
+    //console.log("show");
 }

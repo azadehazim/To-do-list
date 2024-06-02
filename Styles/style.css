@@ -9,6 +9,13 @@ body{
     background: linear-gradient(179.2deg, rgb(21, 21, 212) 0.9%, rgb(53, 220, 243) 95.5%);
 }
 
+main{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+}
+
 h1{
     color: white;
     margin: 30px 0;
@@ -16,15 +23,15 @@ h1{
 
 input{
     width: 90%;
-    margin: 20px 0 15px;
+    /* margin: 20px 0 15px; */
 }
 
 input::placeholder{
     color: white;
 }
 
-.container{
-    width: 400px;
+.containerMain{
+    /* width: 400px; */
     background-color: white;
     border-radius: 20px;
     display: flex;
@@ -34,11 +41,16 @@ input::placeholder{
 }
 
 ul{
-    width: 90%;
-    text-decoration: none;
+    list-style: none;
 }
 
-ul li{
+.inputUl{
+    width: 90%;
+    /* text-decoration: none; */
+    padding-left: 0 !important;
+}
+
+.inputTasks{
     background: radial-gradient(circle at 74.2% 50.9%, rgb(14, 72, 222) 5.2%, rgb(3, 22, 65) 75.3%);
     border-radius: 20px;
     position: relative;
@@ -75,9 +87,43 @@ ul li{
     background: linear-gradient(110.1deg, rgb(34, 126, 34) 2.9%, rgb(168, 251, 60) 90.3%);
     text-decoration: line-through;
     transition: 1s;
+    border-radius: 20px;
+    position: relative;
+    color: white;
+    height: 50px;
+    padding: 10px;
+    opacity: 1;
+    margin: 10px 0;
 }
 
 .trashed{
+    transition: 0.5s;
     opacity: 0;
-    
+    border-radius: 20px;
+    position: relative;
+    color: white;
+    height: 50px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+#taskLists{
+    /* width: 400px; */
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(118, 118, 157);
+}
+
+.allTasksUl{
+    padding-left: 0 !important;
+    width: 90%;
+}
+
+#sectionHeader{
+    font-size: 22px;
+    color: white;
 }
