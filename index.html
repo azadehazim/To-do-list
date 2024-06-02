@@ -24,7 +24,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="#" class="dropdown-item" id="allTasks" onclick="showAllTasks()">All Tasks</a></li>
                     <li><a href="#" class="dropdown-item" id="completedTasks" onclick="showCompletedTasks()">Completed Tasks</a></li>
-                    <li><a href="#" class="dropdown-item">Uncompleted tasks</a></li>
+                    <li><a href="#" class="dropdown-item" id="deletedTasks" onclick="showDeletedTasks()">Deleted tasks</a></li>
                 </ul>
             </div>
 
@@ -37,7 +37,7 @@
 
 
         <section class="col-4 ms-2" id="taskLists">
-            <h2 id="sectionHeader">List of Tasks</h2>
+            <h2 id="sectionHeader">List of (All-Completed-Deleted) Tasks</h2>
             <ul class="allTasksUl"></ul>
     
         </section>

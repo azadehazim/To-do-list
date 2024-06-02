@@ -1,6 +1,8 @@
 
 let allTasksArray=[];
 let completedTasksArray=[];
+let deletedTasksArray=[];
+
 
 
 let count=0;
@@ -55,6 +57,7 @@ function checkHandler(event){
             selectedLi.classList.remove("trashed");
         });
 
+        deletedTasksArray.push(selectedLi);
     }
 
 }
@@ -81,5 +84,18 @@ function showCompletedTasks(){
         completedLi.innerText=item.innerText;
         completedLi.classList.add("completedTasksLi")
         document.querySelector(".allTasksUl").appendChild(completedLi);
+    });
+}
+
+
+function showDeletedTasks(){
+    document.querySelector(".allTasksUl").innerHTML="";
+    document.getElementById("sectionHeader").innerText="Deleted Tasks";
+
+    deletedTasksArray.forEach(item => {
+        let deletedLi=document.createElement("li");
+        deletedLi.innerText=item.innerText;
+        deletedLi.classList.add("completedTasksLi")
+        document.querySelector(".allTasksUl").appendChild(deletedLi);
     });
 }
