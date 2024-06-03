@@ -5,7 +5,7 @@ body{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(179.2deg, rgb(21, 21, 212) 0.9%, rgb(53, 220, 243) 95.5%);
 }
 
@@ -23,15 +23,18 @@ h1{
 
 input{
     width: 90%;
-    /* margin: 20px 0 15px; */
+    background-color: rgb(30, 7, 206);
+    border: none;
+    border-radius: 10px;
+    color: white;
 }
 
 input::placeholder{
     color: white;
+    padding: 4px;
 }
 
 .containerMain{
-    /* width: 400px; */
     background-color: white;
     border-radius: 20px;
     display: flex;
@@ -46,7 +49,6 @@ ul{
 
 .inputUl{
     width: 90%;
-    /* text-decoration: none; */
     padding-left: 0 !important;
 }
 
@@ -108,7 +110,6 @@ ul{
 }
 
 #taskLists{
-    /* width: 400px; */
     background-color: white;
     border-radius: 20px;
     display: flex;
@@ -124,7 +125,7 @@ ul{
 }
 
 #sectionHeader{
-    font-size: 22px;
+    font-size: 20px;
     color: white;
     font-weight: 400;
     padding-top: 10px;

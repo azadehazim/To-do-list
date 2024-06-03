@@ -21,7 +21,7 @@ document.querySelector('#input').addEventListener('change',function(){
     //console.log(allTasksArray);
 
     toDoList.push(input);
-    console.log(toDoList);
+    //console.log(toDoList);
     localStorage.clear();
     localStorage.setItem("toDoList",JSON.stringify(toDoList));
 
@@ -45,6 +45,8 @@ function checkHandler(event){
         //console.log(selectedLi);
 
         completedTasksArray.push(selectedLi);
+        completedTasksArray=[...new Set(completedTasksArray)];
+        
         //console.log(completedTasksArray);
         
     }
