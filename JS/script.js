@@ -2,6 +2,7 @@
 let allTasksArray=[];
 let completedTasksArray=[];
 let deletedTasksArray=[];
+let toDoList=[];
 
 
 
@@ -18,7 +19,12 @@ document.querySelector('#input').addEventListener('change',function(){
     //console.log(li);
     allTasksArray.push(liOnly);
     //console.log(allTasksArray);
-    
+
+    toDoList.push(input);
+    console.log(toDoList);
+    localStorage.clear();
+    localStorage.setItem("toDoList",JSON.stringify(toDoList));
+
 });
 
 

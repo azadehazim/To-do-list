@@ -126,6 +126,8 @@ ul{
 #sectionHeader{
     font-size: 22px;
     color: white;
+    font-weight: 400;
+    padding-top: 10px;
 }
 
 .completedTasksLi{
